@@ -30,6 +30,9 @@ import pandas as pd
 
 from .classical_stats import mcnemars_test
 
+# Deliberately excludes "turn": the live pipeline only ever uses turn=1. If this is ever extended
+# to multi-turn data, add "turn" here — otherwise two different turns of the same question/model
+# pair would silently collide as one item.
 DEFAULT_ITEM_KEY = ("question_id", "model_a", "model_b", "judge_model")
 
 

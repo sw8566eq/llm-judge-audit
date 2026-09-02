@@ -8,6 +8,10 @@ local exploration (matplotlib) and into a JSON-safe payload for the published Ar
     - `plot_posterior_intervals` <- `bayesian_model.summarize`'s DataFrame
     - `to_dashboard_json` <- `classical_stats.evaluate_judge`, `causal_experiment.estimate_*_effect`,
       and `bayesian_model.summarize` results, combined into one payload.
+
+Note: none of these are called from a production code path (pipeline.py / run_pipeline.py /
+generate_fake_results.py) — the dashboard's charts are built directly from to_dashboard_json's
+payload. Kept here, tested, and ready for local/ad-hoc plotting if needed.
 """
 
 from __future__ import annotations

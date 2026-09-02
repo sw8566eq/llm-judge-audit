@@ -77,6 +77,14 @@ checking consistency is a cheap thing to do before trusting any judge's accuracy
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 cp .env.example .env   # add ANTHROPIC_API_KEY
 .venv/bin/pytest
+```
+
+The first `pytest` run needs internet access (downloads MT-Bench Human Judgments from Hugging Face
+Hub, cached afterward), and without a C compiler installed, PyMC's sampler falls back to a slower
+pure-Python mode automatically — expected, not an error.
+
+```bash
+.venv/bin/python scripts/run_pipeline.py --n-items 5 --yes    # cheap smoke test first
 .venv/bin/python scripts/run_pipeline.py --n-items 150 --max-workers 8
 ```
 

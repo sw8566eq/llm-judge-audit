@@ -13,7 +13,7 @@ scoring 150 real head-to-head battles from MT-Bench Human Judgments.
 ## Structure
 
 ```
-src/llm_judge_audit/   judges, classical_stats, causal_experiment, bayesian_model, viz
+src/llm_judge_audit/   judges, pipeline, classical_stats, causal_experiment, bayesian_model, viz
 scripts/               run_pipeline.py (CLI), generate_fake_results.py
 tests/                 test suite
 dashboard/             dashboard source
@@ -29,4 +29,13 @@ cp .env.example .env   # add ANTHROPIC_API_KEY
 .venv/bin/pytest
 ```
 
-Run the pipeline: `.venv/bin/python scripts/run_pipeline.py --n-items 150`
+The first `pytest` run needs internet access — it downloads MT-Bench Human Judgments from Hugging
+Face Hub (cached afterward). If you don't have a C compiler installed, PyMC's sampler falls back
+to a slower pure-Python mode automatically; that's expected, not an error.
+
+Try a cheap smoke test first (`--n-items 5`, ~20 calls) before the full paid run:
+
+```bash
+.venv/bin/python scripts/run_pipeline.py --n-items 5 --yes
+.venv/bin/python scripts/run_pipeline.py --n-items 150
+```

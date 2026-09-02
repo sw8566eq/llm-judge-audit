@@ -159,7 +159,7 @@ def load_mt_bench_items(n_items: int = 200, turn: int = 1, seed: int = 42) -> pd
 # its "Verdict: X" line, which silently turns into an "unparseable" verdict — indistinguishable
 # from a genuine judgment call unless you go looking. Found via a live run where 16% of cot
 # verdicts came back unparseable and every single one had stop_reason="max_tokens" at the old
-# default of 512; see TODO.md.
+# default of 512.
 _DEFAULT_MAX_TOKENS = {"direct": 256, "cot": 1536}
 
 

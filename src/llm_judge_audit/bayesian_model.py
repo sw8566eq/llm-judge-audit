@@ -13,12 +13,19 @@ human-consensus `human_winner`), 0 otherwise. `ability_j` is then how reliably r
 reference, and `difficulty_i` is how hard item i is to call correctly — full posteriors and
 credible intervals for both, rather than a single point-estimate accuracy number.
 
+Note: this collapses every kind of disagreement (a confidently-wrong verdict vs. a hedged
+"tie (inconsistent)") into one Bernoulli bit, discarding structure present in the raw winner
+column. A deliberate simplification for a first pass, not a bug — a natural extension point (e.g.
+an ordinal outcome) if this model is revisited.
+
 This is deliberately generic (it doesn't care whether "rater" is a human annotator or an LLM
 judge config), so it's used two ways:
     - `human_agreement_observations` fits it on MT-Bench's *human* raters against the
       human-majority label — a genuine multi-rater validation on real data, checkable before ever
       calling an LLM judge (are known-careful annotators estimated as more reliable? do
-      known-ambiguous battles come out as more difficult?).
+      known-ambiguous battles come out as more difficult?). Implemented and tested, but not
+      currently wired into `analyze_results` or the published dashboard — run it directly (see
+      `tests/test_bayesian_model.py`) to reproduce that check yourself.
     - `judge_agreement_observations` fits it on `judges.run_judges` output — the actual project
       goal: per-judge-config reliability and per-battle difficulty, estimated jointly.
 
