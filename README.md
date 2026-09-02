@@ -8,7 +8,7 @@ judge-prompt design, and a hierarchical Bayesian (Rasch/IRT) model — run again
 scoring 150 real head-to-head battles from MT-Bench Human Judgments.
 
 **Write-up:** [CASE_STUDY.md](./CASE_STUDY.md)
-**Dashboard:** https://claude.ai/code/artifact/667fd490-ed70-473d-bc5b-12dbf49c3f47
+**Dashboard:** https://sw8566eq.github.io/llm-judge-audit/
 
 ## Structure
 
@@ -16,7 +16,7 @@ scoring 150 real head-to-head battles from MT-Bench Human Judgments.
 src/llm_judge_audit/   judges, pipeline, classical_stats, causal_experiment, bayesian_model, viz
 scripts/               run_pipeline.py (CLI), generate_fake_results.py
 tests/                 test suite
-dashboard/             dashboard source
+docs/                  dashboard, published via GitHub Pages
 data/                  raw items / judge outputs (gitignored)
 ```
 

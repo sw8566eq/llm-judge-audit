@@ -4,7 +4,7 @@ A statistical audit of LLM-as-judge, using classical inter-rater statistics, a p
 experiment, and a hierarchical Bayesian model, run against Claude Haiku 4.5 scoring 150 real
 model-vs-model battles.
 
-Dashboard: https://claude.ai/code/artifact/667fd490-ed70-473d-bc5b-12dbf49c3f47
+Dashboard: https://sw8566eq.github.io/llm-judge-audit/
 Code: `src/llm_judge_audit/` + `scripts/run_pipeline.py`, 74 tests
 
 ## Question
