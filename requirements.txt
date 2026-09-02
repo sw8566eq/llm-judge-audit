@@ -1,0 +1,24 @@
+# Data wrangling
+pandas
+numpy
+
+# Classical statistics
+scipy
+statsmodels
+
+# Bayesian modeling
+pymc
+arviz
+
+# LLM judge orchestration
+anthropic
+python-dotenv
+
+# Ground-truth dataset loading
+datasets
+
+# Visualization (for local exploration; the dashboard itself is a published Artifact)
+matplotlib
+
+# Testing
+pytest
