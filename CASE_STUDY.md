@@ -93,4 +93,4 @@ cp .env.example .env   # add ANTHROPIC_API_KEY
 .venv/bin/python scripts/run_pipeline.py --n-items 150 --max-workers 8
 ```
 
-See [`README.md`](./README.md) for structure, [`TODO.md`](./TODO.md) for the full build log.
+See [`README.md`](./README.md) for structure and setup.

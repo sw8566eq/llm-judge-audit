@@ -18,3 +18,9 @@ data/processed/*
 
 # OS
 .DS_Store
+
+# Local dev log / working notes, not part of the published repo
+TODO.md
+
+# Claude Code project files
+.claude/
