@@ -1,8 +1,9 @@
 """Plotting and dashboard data prep.
 
 Turns the outputs of `classical_stats`, `causal_experiment`, and `bayesian_model` into figures for
-local exploration (matplotlib) and into a JSON-safe payload for the published Artifact dashboard
-(see `dashboard/`). Built directly against those modules' real return shapes:
+local exploration (matplotlib) and into a JSON-safe payload for the published dashboard (see
+`docs/index.html`, published via GitHub Pages). Built directly against those modules' real return
+shapes:
     - `plot_calibration_curve` <- `classical_stats.calibration_curve`'s DataFrame
     - `plot_confusion_matrix` <- `classical_stats.confusion_matrix_report`'s DataFrame
     - `plot_posterior_intervals` <- `bayesian_model.summarize`'s DataFrame
